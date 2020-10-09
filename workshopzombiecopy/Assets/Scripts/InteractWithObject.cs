@@ -12,7 +12,7 @@ public class InteractWithObject : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) {
 			
 			Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, pickupRadius);
-					GameObject player = GameObject.FindWithTag("Player");
+			GameObject player = GameObject.FindWithTag("Player");
 			foreach (var hitCollider in hitColliders)
 			{
 				if(hitCollider.gameObject.tag == "key" && player.GetComponent<PlayerInventory>().hasKey == false) {

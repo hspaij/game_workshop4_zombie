@@ -10,13 +10,17 @@ public class InteractWithObject : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) {
-			print("Trying to pick up");
 			
 			Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, pickupRadius);
 			foreach (var hitCollider in hitColliders)
 			{
-				if(hitCollider.gameObject.tag != "Player" && hitCollider.gameObject.tag != "Untagged") {
+				if(hitCollider.gameObject.tag == "key" || hitCollider.gameObject.tag == "controller") {
+					print("Trying to pick up");
 					print(hitCollider.gameObject.tag);
+					hitCollider.gameObject.GetComponent<PickupObject>().pickedUp = true;
+				} else if(hitCollider.gameObject.tag == "door") {
+					print("Toggling door");
+					hitCollider.gameObject.GetComponent<InteractDoor>().toggleDoor();
 				}
 			}
 		}

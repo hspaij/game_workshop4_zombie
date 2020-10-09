@@ -15,11 +15,11 @@ public class InteractDoor : MonoBehaviour
 	
     public void toggleDoor()
     {
-		print(position);
-		print(rotation);
+		/*
         if(!open) {
 			gameObject.transform.position = new Vector3(gameObject.transform.position.x + (gameObject.transform.localScale.z/2), gameObject.transform.position.y, gameObject.transform.position.z - (gameObject.transform.localScale.z/2));
-			gameObject.transform.rotation = new Quaternion(gameObject.transform.rotation.x, gameObject.transform.rotation.y + 90, gameObject.transform.rotation.z, gameObject.transform.rotation.w);
+			gameObject.transform.rotation = new Quaternion(gameObject.transform.localRotation.x, gameObject.transform.localRotation.y + 90, gameObject.transform.rotation.z, gameObject.transform.localRotation.w);
+			
 			
 			open = true;
 		} else {
@@ -27,5 +27,8 @@ public class InteractDoor : MonoBehaviour
 			gameObject.transform.rotation = rotation;
 			open = false;
 		}
+		*/
+		
+			gameObject.SetActive(false);
     }
 }

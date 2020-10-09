@@ -19,9 +19,11 @@ public class InteractClosedDoor : MonoBehaviour
 		print("attempted toggle");
 		unlockDoor();
 		if(!locked) {
+			/*
 			if(!open) {
 				gameObject.transform.position = new Vector3(gameObject.transform.position.x + (gameObject.transform.localScale.z/2), gameObject.transform.position.y, gameObject.transform.position.z - (gameObject.transform.localScale.z/2));
-				gameObject.transform.rotation = new Quaternion(gameObject.transform.localRotation.x, gameObject.transform.localRotation.y + 90, gameObject.transform.localRotation.z, gameObject.transform.localRotation.w);
+
+				//gameObject.transform.rotation = new Quaternion(gameObject.transform.localRotation.x, gameObject.transform.localRotation.y - 90, gameObject.transform.localRotation.z, gameObject.transform.localRotation.w);
 				
 				open = true;
 			} else {
@@ -29,6 +31,8 @@ public class InteractClosedDoor : MonoBehaviour
 				gameObject.transform.rotation = rotation;
 				open = false;
 			}
+			*/
+			gameObject.SetActive(false);
 		} else {
 			//Play sound or something;
 		}
